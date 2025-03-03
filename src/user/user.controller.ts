@@ -8,8 +8,11 @@ export class UserController {
 
   @Post('register')
   register(@Body() registerUserDto: RegisterUserDto) {
-    console.log(registerUserDto);
+   return this.userService.register(registerUserDto);
+  }
 
-    return 'done';
+  @Post('login')
+  login(@Body() registerUserDto: RegisterUserDto) {
+    return this.userService.login(registerUserDto);
   }
 }
